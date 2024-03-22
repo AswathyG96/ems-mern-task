@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Pages/Home/Home';
+import Register from './Pages/Register/Register';
+import Edit from './Pages/Edit/Edit';
+import Login from './Pages/Login/Login';
+import Emplist from './Pages/Emplist/Emplist';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+//  import './mdb-react-ui-kit';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   {/* <h1 className='mt-5 text-center text-dark'><i className='fa-solid fa-users'></i> welcome to ems app</h1> */}
+   
+<Routes>
+  <Route path='/' element={<Home/>}  />
+  <Route path='/register' element={<Register/>} />
+  <Route path='/login/' element={<Login/>}/>
+ <Route path='/edit/:id' element={<Edit/>} />
+ <Route path='/emplist' element={<Emplist/>}/>
+</Routes>
+     <Footer/>
+
+   </>
+  
   );
-}
+  }
 
 export default App;
