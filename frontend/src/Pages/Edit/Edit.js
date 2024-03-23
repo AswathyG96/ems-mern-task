@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Edit.css";
 import axiosInstance from "../../utils/axiosInstance";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 
 import { Card, Row, Form, Button, Navbar, Nav, Container } from "react-bootstrap";
 
 import Select from "react-select";
 function Edit() {
+const navigate = useNavigate();
   const option = [
     { value: "Active", label: "Active" },
     { value: "Inactive", label: "Inactive" },
